@@ -1,16 +1,14 @@
 // ==UserScript==
 // @author       Mate
-// @name         WME Permalink to Serveral Maps — Hungarian Edition 1.1
+// @name         WME Permalink to Serveral Maps — Hungarian Edition 1.2
 // @description  This script adds a menu with links to a permalink page on several maps.
-// @version      2.5.0
+// @version      1.2.0
 // @include      https://www.waze.com/*/editor*
 // @include      https://www.waze.com/editor*
 // @include      https://beta.waze.com/*
 // @exclude      https://www.waze.com/*user/*editor/*
 // @grant        none
-// @namespace    https://github.com/alexschrod/WPTSM-NE
-// @downloadURL https://update.greasyfork.org/scripts/393578/WME%20Permalink%20to%20Serveral%20Maps%20%E2%80%94%20Norwegian%20Edition%2024.user.js
-// @updateURL https://update.greasyfork.org/scripts/393578/WME%20Permalink%20to%20Serveral%20Maps%20%E2%80%94%20Norwegian%20Edition%2024.meta.js
+// @namespace    https://github.com/vstvst/WPTSM-HU
 // ==/UserScript==
 
 // Mini How-To:
@@ -591,6 +589,19 @@ function mapillaryMap(urlBase) {
     window.open(mapsUrl, "_blank");
  }
 
+function Kartaview(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    zoom = zoom > 6 ? 16 : zoom + 12;
+    var mapsUrl =
+        "http://kartaview.org/map/@" + lat + "," + lon + "," + zoom + "z";
+    window.open(mapsUrl, "_blank");
+ }
+
 function bkkgo(urlBase) {
 
     var href = $(".WazeControlPermalink a").attr("href");
@@ -668,6 +679,10 @@ var mapFunctions = {
         mapillaryMap(
             "https://www.mapillary.com/app/?lat=%lokasjon%");
     },
+    Kartaview: function () {
+        Kartaview(
+            "https://kartaview.org/map/@%lokasjon%");
+    },
     Here: function () {
         Here("https://wego.here.com/?map=%lokasjon%");
     },
@@ -716,6 +731,11 @@ var mapFeatures = {
     Mapillary: {
         Name: "Mapillary",
         ShortName: "Mapillary",
+        Enabled: true,
+    },
+    Kartaview: {
+        Name: "Kartaview",
+        ShortName: "Kartaview",
         Enabled: true,
     },
     bkkgo: {
