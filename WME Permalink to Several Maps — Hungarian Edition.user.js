@@ -1,8 +1,8 @@
 // ==UserScript==
 // @author       Mate
-// @name         WME Permalink to Several Maps — Hungarian Edition 1.3
+// @name         WME Permalink to Several Maps — Hungarian Edition v1.3.1
 // @description  This script adds a menu with links to a permalink page on several maps.
-// @version      1.3.0
+// @version      1.3.1
 // @include      https://www.waze.com/*/editor*
 // @include      https://www.waze.com/editor*
 // @include      https://beta.waze.com/*
