@@ -1,8 +1,8 @@
 // ==UserScript==
 // @author       Mate
-// @name         WME Permalink to Serveral Maps — Hungarian Edition 1.2
+// @name         WME Permalink to Serveral Maps — Hungarian Edition 1.3
 // @description  This script adds a menu with links to a permalink page on several maps.
-// @version      1.2.0
+// @version      1.3.0
 // @include      https://www.waze.com/*/editor*
 // @include      https://www.waze.com/editor*
 // @include      https://beta.waze.com/*
@@ -667,6 +667,21 @@ function MapTomTom() {
     window.open(mapsUrl, "_blank");
 }
 
+function merretekerjek() {
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    //zoom = zoom > 6 ? 19 : zoom + 11;
+    //zoom = zoom === 0 ? 3 : zoom-2;
+    //https://mydrive.tomtom.com/no_no/#mode=viewport+viewport=59.93091,10.88519,12
+    //https://plan.tomtom.com/en?p=60.07678,9.87494,7.89z#mode=viewport+viewport=59.95401,10.90569,17
+    var mapsUrl =
+        "https://merretekerjek.hu/?#lat=" + lat + "&lon=" + lon + "&zoom=" + zoom;
+    window.open(mapsUrl, "_blank");
+}
+
 var mapFunctions = {
     Google: googleMap,
     GoogleBeta: googleBetaMap,
@@ -694,6 +709,9 @@ var mapFunctions = {
     },
     kozut: function () {
         kozut("https://www.utinform.hu/map?d=0&n=0&l=abc&v=%lokasjon%");
+    },
+    merretekerjek: function () {
+        merretekerjek("https://merretekerjek.hu/?#lat=%lokasjon%");
     },
 };
 
@@ -729,28 +747,33 @@ var mapFeatures = {
         Enabled: true,
     },
     Mapillary: {
-        Name: "Mapillary",
+        Name: "Mapillary - utcakép",
         ShortName: "Mapillary",
         Enabled: true,
     },
     Kartaview: {
-        Name: "Kartaview",
+        Name: "Kartaview - utcakép",
         ShortName: "Kartaview",
         Enabled: true,
     },
     bkkgo: {
-        Name: "BKKgo",
+        Name: "BKKgo utazástervező",
         ShortName: "BKKgo",
         Enabled: true,
     },
     terkepem: {
         Name: "Térképem",
-        ShortName: "Térképem",
+        ShortName: "Térképem - házszámokhoz",
         Enabled: true,
     },
     kozut: {
-        Name: "Közut",
+        Name: "Magyar Közut",
         ShortName: "Közut",
+        Enabled: true,
+    },
+    merretekerjek: {
+        Name: "Merretekerjek - kerékpáros tervező",
+        ShortName: "Merretekerjek",
         Enabled: true,
     },
 };
