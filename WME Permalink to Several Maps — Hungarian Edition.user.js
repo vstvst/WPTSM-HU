@@ -511,7 +511,6 @@ function googleMap() {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 19 : zoom + 12;
     var mapsUrl =
         "https://maps.google.com/?ll=" + lat + "," + lon + "&z=" + zoom;
     window.open(mapsUrl, "_blank");
@@ -523,10 +522,8 @@ function googleBetaMap() {
     var lon = getQueryString(href, "lon");
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
-    zoom = zoom >= 8 ? 8 : zoom;
     zoom = 70000 / Math.pow(2, zoom);
 
-    //var mapsUrl = 'https://www.google.com/maps?t=m&ll='+lat+','+lon+'&spn='+zoomh+','+zoomv+'&output=classic';
     var mapsUrl =
         "https://www.google.com/maps/preview#!data=!1m4!1m3!1d" +
         zoom +
@@ -544,7 +541,6 @@ function bingMap() {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 19 : zoom + 12;
     var mapsUrl =
         " http://www.bing.com/maps/default.aspx?v=2&cp=" +
         lat +
@@ -563,7 +559,6 @@ function osmMap() {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 19 : zoom + 12;
     var mapsUrl =
         "http://www.openstreetmap.org/?lat=" +
         lat +
@@ -582,8 +577,9 @@ function mapillaryMap(urlBase) {
     var lon = getQueryString(href, "lon");
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
+    
+    zoom = zoom - 1;
 
-    zoom = zoom > 6 ? 16 : zoom + 12;
     var mapsUrl =
         "http://www.mapillary.com/app/?lat=" + lat + "&lng=" + lon + "&z=" + zoom;
     window.open(mapsUrl, "_blank");
@@ -596,7 +592,8 @@ function Kartaview(urlBase) {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 16 : zoom + 12;
+    zoom = zoom - 1;
+
     var mapsUrl =
         "http://kartaview.org/map/@" + lat + "," + lon + "," + zoom + "z";
     window.open(mapsUrl, "_blank");
@@ -609,7 +606,8 @@ function bkkgo(urlBase) {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 16 : zoom + 12;
+    zoom = zoom -1;
+    
     var mapsUrl =
         "http://go.bkk.hu/?map=" + zoom + "/" + lat + "/" + lon;
     window.open(mapsUrl, "_blank");
@@ -621,8 +619,7 @@ function terkepem(urlBase) {
     var lon = getQueryString(href, "lon");
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
-
-    zoom = zoom > 6 ? 18 : zoom + 12;
+    
     var mapsUrl =
         "http://terkepem.hu/utvonalterv/auto/#!l=0,21!p=" + zoom + "/" + lat + "/" + lon;
     window.open(mapsUrl, "_blank");
@@ -635,7 +632,6 @@ function kozut(urlBase) {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    zoom = zoom > 6 ? 16 : zoom + 12;
     var mapsUrl =
         "http://www.utinform.hu/hu/map?d=0&n=0&l=abc&v=" + lon + "," + lat + "," + zoom;
     window.open(mapsUrl, "_blank");
@@ -658,10 +654,9 @@ function MapTomTom() {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    //zoom = zoom > 6 ? 19 : zoom + 11;
-    //zoom = zoom === 0 ? 3 : zoom-2;
     //https://mydrive.tomtom.com/no_no/#mode=viewport+viewport=59.93091,10.88519,12
     //https://plan.tomtom.com/en?p=60.07678,9.87494,7.89z#mode=viewport+viewport=59.95401,10.90569,17
+    zoom = zoom -1;
     var mapsUrl =
         "https://plan.tomtom.com/hu?p=" + lat + "," + lon + "," + zoom + "z";
     window.open(mapsUrl, "_blank");
@@ -673,10 +668,6 @@ function merretekerjek() {
     var lat = getQueryString(href, "lat");
     var zoom = parseInt(getQueryString(href, "zoom"));
 
-    //zoom = zoom > 6 ? 19 : zoom + 11;
-    //zoom = zoom === 0 ? 3 : zoom-2;
-    //https://mydrive.tomtom.com/no_no/#mode=viewport+viewport=59.93091,10.88519,12
-    //https://plan.tomtom.com/en?p=60.07678,9.87494,7.89z#mode=viewport+viewport=59.95401,10.90569,17
     var mapsUrl =
         "https://merretekerjek.hu/?#lat=" + lat + "&lon=" + lon + "&zoom=" + zoom;
     window.open(mapsUrl, "_blank");
