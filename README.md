@@ -1,8 +1,9 @@
-This script adds a Waze WME menu with links to a permalink page on several maps.
+A Waze térképszerkesztőjében az aktuális térképnézetet nyitja meg különböző térképes weboldalakon.
 
 Mini How-To:
-1) Install this script as Greasemonkey script or Tampermonkey script
-2) Click on desired permalink in the menu
+1) Telepítsd a szkriptet Greasemonkey vagy Tampermonkey alá
+
+v1.3.2 Mapillaryban megjelennek a sebességkorlátozó, -feloldó, vasúti átjáró táblák és közlekedési lámpák
 
 v1.3.1 Gépelési hiba javítása
 
