@@ -3,7 +3,7 @@ A Waze térképszerkesztőjében az aktuális térképnézetet nyitja meg külö
 Mini How-To:
 1) Telepítsd a szkriptet Greasemonkey vagy Tampermonkey alá
 
-v1.3.2 Mapillaryban megjelennek a sebességkorlátozó, -feloldó, vasúti átjáró táblák és közlekedési lámpák
+v1.4 Mapillaryban megjelennek a sebességkorlátozó, -feloldó, vasúti átjáró táblák és a közlekedési lámpák
 
 v1.3.1 Gépelési hiba javítása
 
