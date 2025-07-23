@@ -1,8 +1,8 @@
 // ==UserScript==
 // @author       Mate
-// @name         WME Permalink to Several Maps — Hungarian Edition v1.3.2
+// @name         WME Permalink to Several Maps — Hungarian Edition v1.4
 // @description  This script adds a menu with links to a permalink page on several maps.
-// @version      1.3.2
+// @version      1.4
 // @include      https://www.waze.com/*/editor*
 // @include      https://www.waze.com/editor*
 // @include      https://beta.waze.com/*
@@ -570,73 +570,6 @@ function osmMap() {
     window.open(mapsUrl, "_blank");
 }
 
-
-function mapillaryMap(urlBase) {
-
-    var href = $(".WazeControlPermalink a").attr("href");
-    var lon = getQueryString(href, "lon");
-    var lat = getQueryString(href, "lat");
-    var zoom = parseInt(getQueryString(href, "zoom"));
-    
-    zoom = zoom - 1;
-
-    var mapsUrl =
-        "http://www.mapillary.com/app/?lat=" + lat + "&lng=" + lon + "&z=" + zoom + "&trafficSign%5B%5D=regulatory--maximum-speed-limit-20--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-30--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-40--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-50--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-60--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-70--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-80--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-90--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-100--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-110--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-120--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-20--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-30--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-40--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-50--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-60--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-70--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-80--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-90--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-100--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-110--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-120--g1&trafficSign%5B%5D=regulatory--end-of-prohibition--g1&trafficSign%5B%5D=warning--trail-crossing--g4&trafficSign%5B%5D=warning--railroad-crossing-without-barriers--g3&mapFeature%5B%5D=object--traffic-light--other&mapFeature%5B%5D=object--traffic-light--general-upright";
-    window.open(mapsUrl, "_blank");
- }
-
-function Kartaview(urlBase) {
-
-    var href = $(".WazeControlPermalink a").attr("href");
-    var lon = getQueryString(href, "lon");
-    var lat = getQueryString(href, "lat");
-    var zoom = parseInt(getQueryString(href, "zoom"));
-
-    zoom = zoom - 1;
-
-    var mapsUrl =
-        "http://kartaview.org/map/@" + lat + "," + lon + "," + zoom + "z";
-    window.open(mapsUrl, "_blank");
- }
-
-function bkkgo(urlBase) {
-
-    var href = $(".WazeControlPermalink a").attr("href");
-    var lon = getQueryString(href, "lon");
-    var lat = getQueryString(href, "lat");
-    var zoom = parseInt(getQueryString(href, "zoom"));
-
-    zoom = zoom -1;
-    
-    var mapsUrl =
-        "http://go.bkk.hu/?map=" + zoom + "/" + lat + "/" + lon;
-    window.open(mapsUrl, "_blank");
- }
-
-function terkepem(urlBase) {
-
-    var href = $(".WazeControlPermalink a").attr("href");
-    var lon = getQueryString(href, "lon");
-    var lat = getQueryString(href, "lat");
-    var zoom = parseInt(getQueryString(href, "zoom"));
-    
-    var mapsUrl =
-        "http://terkepem.hu/utvonalterv/auto/#!l=0,21!p=" + zoom + "/" + lat + "/" + lon;
-    window.open(mapsUrl, "_blank");
- }
-
-function kozut(urlBase) {
-
-    var href = $(".WazeControlPermalink a").attr("href");
-    var lon = getQueryString(href, "lon");
-    var lat = getQueryString(href, "lat");
-    var zoom = parseInt(getQueryString(href, "zoom"));
-
-    var mapsUrl =
-        "http://www.utinform.hu/hu/map?d=0&n=0&l=abc&v=" + lon + "," + lat + "," + zoom;
-    window.open(mapsUrl, "_blank");
- }
-
 function Here(urlBase) {
     var href = $(".WazeControlPermalink a").attr("href");
     var lon = getQueryString(href, "lon");
@@ -662,6 +595,58 @@ function MapTomTom() {
     window.open(mapsUrl, "_blank");
 }
 
+function mapillaryMap(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    zoom = zoom + 2;
+
+    var mapsUrl =
+        "http://www.mapillary.com/app/?lat=" + lat + "&lng=" + lon + "&z=" + zoom + "&trafficSign%5B%5D=regulatory--maximum-speed-limit-20--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-30--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-40--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-50--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-60--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-70--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-80--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-90--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-100--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-110--g1&trafficSign%5B%5D=regulatory--maximum-speed-limit-120--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-20--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-30--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-40--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-50--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-60--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-70--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-80--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-90--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-100--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-110--g1&trafficSign%5B%5D=regulatory--end-of-maximum-speed-limit-120--g1&trafficSign%5B%5D=regulatory--end-of-prohibition--g1&trafficSign%5B%5D=warning--trail-crossing--g4&trafficSign%5B%5D=warning--railroad-crossing-without-barriers--g3&mapFeature%5B%5D=object--traffic-light--other&mapFeature%5B%5D=object--traffic-light--general-upright";
+    window.open(mapsUrl, "_blank");
+ }
+
+function Kartaview(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    zoom = zoom + 1;
+
+    var mapsUrl =
+        "http://kartaview.org/map/@" + lat + "," + lon + "," + zoom + "z";
+    window.open(mapsUrl, "_blank");
+ }
+
+function terkepem(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    var mapsUrl =
+        "http://terkepem.hu/utvonalterv/auto/#!l=0,21!p=" + zoom + "/" + lat + "/" + lon;
+    window.open(mapsUrl, "_blank");
+ }
+
+function kozut(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    var mapsUrl =
+        "http://www.utinform.hu/hu/map?d=0&n=0&l=abc&v=" + lon + "," + lat + "," + zoom;
+    window.open(mapsUrl, "_blank");
+ }
+
 function merretekerjek() {
     var href = $(".WazeControlPermalink a").attr("href");
     var lon = getQueryString(href, "lon");
@@ -673,11 +658,28 @@ function merretekerjek() {
     window.open(mapsUrl, "_blank");
 }
 
+function bkkgo(urlBase) {
+
+    var href = $(".WazeControlPermalink a").attr("href");
+    var lon = getQueryString(href, "lon");
+    var lat = getQueryString(href, "lat");
+    var zoom = parseInt(getQueryString(href, "zoom"));
+
+    zoom = zoom -1;
+
+    var mapsUrl =
+        "http://go.bkk.hu/?map=" + zoom + "/" + lat + "/" + lon;
+    window.open(mapsUrl, "_blank");
+ }
+
 var mapFunctions = {
     Google: googleMap,
     GoogleBeta: googleBetaMap,
     Bing: bingMap,
     OSM: osmMap,
+    Here: function () {
+        Here("https://wego.here.com/?map=%lokasjon%");
+    },
     TomTom: function () {
         MapTomTom();
     },
@@ -689,12 +691,6 @@ var mapFunctions = {
         Kartaview(
             "https://kartaview.org/map/@%lokasjon%");
     },
-    Here: function () {
-        Here("https://wego.here.com/?map=%lokasjon%");
-    },
-    bkkgo: function () {
-        bkkgo("https://go.bkk.hu/?map=%lokasjon%");
-    },
     terkepem: function () {
         terkepem("https://terkepem.hu/utvonalterv/auto/#!l=0,2!p=%lokasjon%");
     },
@@ -703,6 +699,9 @@ var mapFunctions = {
     },
     merretekerjek: function () {
         merretekerjek("https://merretekerjek.hu/?#lat=%lokasjon%");
+    },
+    bkkgo: function () {
+        bkkgo("https://go.bkk.hu/?map=%lokasjon%");
     },
 };
 
@@ -732,7 +731,7 @@ var mapFeatures = {
         ShortName: "Here",
         Enabled: true,
     },
-   TomTom: {
+    TomTom: {
         Name: "TomTom",
         ShortName: "TomTom",
         Enabled: true,
@@ -745,11 +744,6 @@ var mapFeatures = {
     Kartaview: {
         Name: "Kartaview - utcakép",
         ShortName: "Kartaview",
-        Enabled: true,
-    },
-    bkkgo: {
-        Name: "BKKgo utazástervező",
-        ShortName: "BKKgo",
         Enabled: true,
     },
     terkepem: {
@@ -765,6 +759,11 @@ var mapFeatures = {
     merretekerjek: {
         Name: "Merretekerjek - kerékpáros tervező",
         ShortName: "Merretekerjek",
+        Enabled: true,
+    },
+    bkkgo: {
+        Name: "BKKgo utazástervező",
+        ShortName: "BKKgo",
         Enabled: true,
     },
 };
@@ -813,7 +812,7 @@ async function initializeMyUserscript() {
         W.userscripts.registerSidebarTab("wmepmsm-hu");
 
     tabLabel.innerText = "WME PtSM — HU";
-    tabLabel.title = "WME Permalink to Serveral Maps — Hungarian Edition";
+    tabLabel.title = "WME Permalink to Several Maps — Hungarian Edition";
 
     tabPane.classList.add("wmepmsm-hu-link-list");
 
